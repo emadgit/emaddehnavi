@@ -9,4 +9,10 @@ def home():
 
 
 def start():
+    msg = """
+    Welcome to our API powered by Flask 👋
+    In this API we showcase how to use 
+    Localstack in your local machine!
+    """
+    print(msg)
     app.run()

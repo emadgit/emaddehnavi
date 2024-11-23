@@ -9,11 +9,13 @@ readme = "README.md"
 python = "^3.9.6"
 flask = "^3.1.0"
 ipykernel = "^6.29.5"
+awscli = "^1.36.9"
+boto3 = "^1.35.68"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.poetry.script]
+[tool.poetry.scripts]
 start = "backend.main:start"
