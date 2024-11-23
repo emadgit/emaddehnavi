@@ -1,5 +1,7 @@
 from flask import Flask, jsonify
 
+endpoint_url = "http://localhost.localstack.cloud:4566"
+
 app = Flask(__name__)
 
 
