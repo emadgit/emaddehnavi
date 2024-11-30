@@ -11,6 +11,7 @@ flask = "^3.1.0"
 ipykernel = "^6.29.5"
 awscli = "^1.36.9"
 boto3 = "^1.35.68"
+flask-cors = "^5.0.0"
 
 
 [build-system]

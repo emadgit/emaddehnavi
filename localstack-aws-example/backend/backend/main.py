@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request, send_file
+from flask_cors import cross_origin
 import boto3
 from werkzeug.utils import secure_filename
 from backend import S3_BUCKET, LOCAL_STACK_ENDPOINT
@@ -12,6 +13,7 @@ def home():
 
 
 @app.route("/upload", methods=["POST"])
+@cross_origin(["*"])
 def upload():
     try:
         print("request.files", request.files)
@@ -27,6 +29,7 @@ def upload():
 
 
 @app.route("/download/<key>")
+@cross_origin(["*"])
 def download(key):
     try:
         print(f"Downloading {key} from S3 {S3_BUCKET} bucket")
