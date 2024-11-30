@@ -102,6 +102,8 @@ export default component$(() => {
             <p>Downloaded Image:</p>
             <img
               src={downloadedImage.value}
+              width={150}
+              height={150}
               alt="Downloaded file"
               class="max-h-64 max-w-full"
             />
@@ -120,11 +122,12 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Welcome to Qwik",
+  title: "Localstack example",
   meta: [
     {
       name: "description",
-      content: "Qwik site description",
+      content:
+        "A simple frontend to upload and download files from an AWS S3 bucket locally using Localstack",
     },
   ],
 };
