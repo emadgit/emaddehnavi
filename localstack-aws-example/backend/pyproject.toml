@@ -20,5 +20,3 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 start = "backend.main:start"
-watermelon = "backend.main:watermelon"
-contest = "backend.contest:main"
