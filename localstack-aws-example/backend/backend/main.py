@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_file
 import boto3
 from werkzeug.utils import secure_filename
 from backend import S3_BUCKET, LOCAL_STACK_ENDPOINT
@@ -22,17 +22,19 @@ def upload():
         client = boto3.client("s3", endpoint_url=LOCAL_STACK_ENDPOINT)
         client.put_object(Bucket=S3_BUCKET, Key="uploads/" + filename, Body=file)
         return jsonify(message="File uploaded successfully to S3 bucket"), 200
-    except:
-        print("Something went wrong")
+    except Exception as err:
+        print(f"Something went wrong. {err}")
 
 
 @app.route("/download/<key>")
 def download(key):
     try:
         print(f"Downloading {key} from S3 {S3_BUCKET} bucket")
-        return jsonify(message="Successfull request."), 200
-    except:
-        print("Something went wrong")
+        client = boto3.client("s3", endpoint_url=LOCAL_STACK_ENDPOINT)
+        my_file = client.get_object(Bucket=S3_BUCKET, Key="uploads/" + key)
+        return send_file(my_file["Body"], download_name=key)
+    except Exception as err:
+        print(f"Something went wrong. {err}")
 
 
 def start():
