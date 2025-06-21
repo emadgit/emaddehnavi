@@ -1,0 +1,19 @@
+{
+  "name": "box-model",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "css",
+    "box-model"
+  ],
+  "license": "ISC",
+  "author": "Emad Dehnavi",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  }
+}
