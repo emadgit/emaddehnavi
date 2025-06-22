@@ -1,30 +1,55 @@
+*,
+::before,
+::after {
+box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  background: #ddd;
 }
 
 .header {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #d5f330;
+  color: black;
   padding: 20px;
   text-align: center;
 }
 
 .container {
-  display: flex;
+  padding: 1.5em;
 }
 
-.column {
-  flex: 1;
-  padding: 20px;
-  border: 2px solid #ccc;
-  background-color: #f9f9f9;
-  text-align: center;
+.main-content {
+  width: 70%;
+  padding: 15px;
+  float: left;
+  background-color: white;
 }
 
-.column + .column {
-  border-left: none; /* Avoid double borders between columns */
+.sidebar {
+  width: 30%;
+  float: left;
+  background-color: white;
+  padding: 1.5em;
+  width: calc(30% - 1.5em); /* substract from total width */
+  margin-left: 1.5em; /* space between main content and sidebar */
+}
+
+.cta-btn {
+  padding: 1em;
+  background-color: #d5f330;
+  color: black;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  display: block;
+  margin: 1.5em auto;
+  width: 100%;
+}
+
+.cta-btn:hover {
+  background-color: #d5a220;
 }
